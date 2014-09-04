@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visualizers", "Visualizers\Visualizers.csproj", "{17CF0F95-6FB0-4FCB-9BC5-A211F18F5421}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visualizers.Tests", "Visualizers.Tests\Visualizers.Tests.csproj", "{D42AAC8C-BB57-4022-A4B9-5EE7962FDC13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visualizers.Harness", "Visualizers.Harness\Visualizers.Harness.csproj", "{AB6C5FE4-9508-48DC-A7C9-B25D052F492D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17CF0F95-6FB0-4FCB-9BC5-A211F18F5421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17CF0F95-6FB0-4FCB-9BC5-A211F18F5421}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17CF0F95-6FB0-4FCB-9BC5-A211F18F5421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17CF0F95-6FB0-4FCB-9BC5-A211F18F5421}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D42AAC8C-BB57-4022-A4B9-5EE7962FDC13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D42AAC8C-BB57-4022-A4B9-5EE7962FDC13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D42AAC8C-BB57-4022-A4B9-5EE7962FDC13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D42AAC8C-BB57-4022-A4B9-5EE7962FDC13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB6C5FE4-9508-48DC-A7C9-B25D052F492D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB6C5FE4-9508-48DC-A7C9-B25D052F492D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB6C5FE4-9508-48DC-A7C9-B25D052F492D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB6C5FE4-9508-48DC-A7C9-B25D052F492D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

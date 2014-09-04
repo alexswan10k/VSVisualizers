@@ -1,0 +1,42 @@
+﻿<Window x:Class="Visualizers.Views.XDocCompareView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:ViewModels="clr-namespace:Visualizers.ViewModels" 
+		xmlns:e="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+		xmlns:Behaviours="clr-namespace:Visualizers.Helpers"
+	mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+	<Window.DataContext>
+		<ViewModels:XDocCompareViewModel />
+	</Window.DataContext>
+	<Window.Resources>
+		<ResourceDictionary Source="/Visualizers;component\Resources\Templates.xaml" />
+	</Window.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="73*"/>
+			<RowDefinition Height="17*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="35*"/>
+			<ColumnDefinition Width="35*"/>
+		</Grid.ColumnDefinitions>
+
+		<TreeView ItemsSource="{Binding DocVmA.Nodes}" >
+			<e:Interaction.Behaviors>
+				<Behaviours:BindableSelectedItemBehavior SelectedItem="{Binding DocVmA.SelectedNode, Mode=TwoWay}" />
+			</e:Interaction.Behaviors>
+		</TreeView>
+		<TreeView ItemsSource="{Binding DocVmB.Nodes}" Grid.Column="1" >
+			<e:Interaction.Behaviors>
+				<Behaviours:BindableSelectedItemBehavior SelectedItem="{Binding DocVmB.SelectedNode, Mode=TwoWay}" />
+			</e:Interaction.Behaviors>
+		</TreeView>
+
+		<TextBox Text="{Binding DocVmA.SelectedNode.FormattedXml, Mode=OneWay}" Grid.Column="0" Grid.Row="1" Background="Transparent"
+         BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap" />
+		<TextBox Text="{Binding DocVmB.SelectedNode.FormattedXml, Mode=OneWay}" Grid.Column="1" Grid.Row="1" Background="Transparent"
+         BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap" />
+	</Grid>
+</Window>

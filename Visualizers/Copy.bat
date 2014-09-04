@@ -1,0 +1,1 @@
+copy "C:\Users\dalexswa\Documents\visual studio 2012\Projects\Visualizers\Visualizers\bin\Release" "C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Packages\Debugger\Visualizers" 

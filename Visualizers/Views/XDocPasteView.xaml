@@ -1,0 +1,34 @@
+﻿<Window x:Class="Visualizers.Views.XDocPasteView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:ViewModels="clr-namespace:Visualizers.ViewModels" 
+		xmlns:e="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+		xmlns:Behaviours="clr-namespace:Visualizers.Helpers"
+	mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+	<Window.DataContext>
+		<ViewModels:XDocPasteViewModel />
+	</Window.DataContext>
+	<Window.Resources>
+		<ResourceDictionary Source="/Visualizers;component\Resources\Templates.xaml" />
+	</Window.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="100*"/>
+			<RowDefinition Height="30"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="35*"/>
+			<ColumnDefinition Width="35*"/>
+		</Grid.ColumnDefinitions>
+		<TextBox Text="{Binding Doc1}" Grid.Column="0" Background="Transparent"
+			BorderThickness="0" TextWrapping="Wrap" AcceptsReturn="True" Grid.RowSpan="1" />
+		<TextBox Text="{Binding Doc2}" Grid.Column="1" Background="Transparent"
+			BorderThickness="0" TextWrapping="Wrap" AcceptsReturn="True" Grid.RowSpan="1" />
+		<Button Content="Use" Grid.Column="0" Grid.Row="1" Command="{Binding Use}" Margin="90,0,0,0" />
+		<Button Content="Compare" Grid.Column="1" Grid.Row="1" Command="{Binding Compare}" />
+		<CheckBox Content="HtmlDecode" Grid.Column="0" Grid.Row="1" IsChecked="{Binding HtmlDecode}" HorizontalAlignment="Left" Width="85" VerticalAlignment="Top" />
+		<CheckBox Content="DestroyNamespaces" Grid.Column="0" Grid.Row="1" IsChecked="{Binding DestroyNamespaces}" HorizontalAlignment="Left" Width="85" Margin="0,16,0,-16" Height="30" VerticalAlignment="Top" />
+	</Grid>
+</Window>

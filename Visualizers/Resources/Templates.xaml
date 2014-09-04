@@ -1,0 +1,66 @@
+﻿<ResourceDictionary 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:ViewModels="clr-namespace:Visualizers.ViewModels"
+	mc:Ignorable="d">
+	<HierarchicalDataTemplate DataType="{x:Type ViewModels:XElementViewModel}" ItemsSource="{Binding Nodes}">
+		<StackPanel Orientation="Horizontal">
+			<StackPanel.Triggers>
+				<!--<DataTrigger Binding="{Binding IsPaired}" Value="false" >
+					<Setter Property="Background" Value="{Binding NotPairedStyle}"></Setter>
+				</DataTrigger>-->
+			</StackPanel.Triggers>
+			<StackPanel.ToolTip>
+				<StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<Label Content="Type"></Label>
+						<Label Content="{Binding Element.NodeType}"></Label>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<Label Content="Namespace"></Label>
+						<Label Content="{Binding Element.BaseUri}"></Label>
+					</StackPanel>
+					<ListBox ItemsSource="{Binding Attributes}">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel Orientation="Horizontal">
+									<Label Content="{Binding Name}"></Label>
+									<Label Content=":"></Label>
+									<Label Content="{Binding Value}"></Label>
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+
+				</StackPanel>
+			</StackPanel.ToolTip>
+			<Label Content="{Binding Element.Name.LocalName, Mode=OneWay}"></Label>
+			<Label Content="{Binding NodeCount}"></Label>
+			<StackPanel Orientation="Horizontal">
+				<ListView ItemsSource="{Binding Attributes}" >
+					<ListView.ItemsPanel>
+						<ItemsPanelTemplate>
+							<WrapPanel Orientation="Horizontal"/>
+						</ItemsPanelTemplate>
+					</ListView.ItemsPanel>
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<StackPanel Orientation="Horizontal">
+								<!--<TextBox Text="{Binding Name, Mode=OneWay}"></TextBox>-->
+								<Label Content="{Binding Value, Mode=OneWay}"></Label>
+							</StackPanel>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</StackPanel>
+		</StackPanel>
+	</HierarchicalDataTemplate>
+
+	
+	
+	<Style TargetType="TreeViewItem">
+		<Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource Self}, Path=Header.IsExpanded, Mode=TwoWay}"/>
+	</Style>
+</ResourceDictionary>
+	
